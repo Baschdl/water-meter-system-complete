@@ -39,6 +39,10 @@ The config and the log directory can be empty at the very first start. They will
 To test your local changes run `docker build -t watermeter .` and 
 `docker run -p 3000:3000 --mount type=bind,source="$(pwd)"/config/,target=/config --mount type=bind,source="$(pwd)"/log/,target=/log watermeter`.
 
+#### Tests
+Run tests with `docker build -t watermeter .` and
+`docker run -p 3000:3000 --mount type=bind,source="$(pwd)"/config/,target=/config --mount type=bind,source="$(pwd)"/log/,target=/log watermeter python -m unittest test`.
+
 ## Changelog - lastest version
 ##### 5.6.1 (2020-03-12)
 * Correct error in docker commmand (remove space character in bind)
